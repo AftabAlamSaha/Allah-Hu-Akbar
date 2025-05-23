@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allah Ka hamd</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #f0f2f5;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px #bec3c9,
+                        -10px -10px 20px #ffffff;
+            text-align: center;
+            max-width: 500px; /* Container max-width */
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dua-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #downloadImageBtn {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        #downloadImageBtn svg {
+            width: 1em;
+            height: 1em;
+            margin-right: 4px;
+            fill: currentColor;
+        }
+
+        #downloadImageBtn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        audio {
+            width: 100%;
+            margin: 25px auto;
+            display: block;
+            border-radius: 10px;
+            outline: none;
+            background: #f0f2f5;
+            padding: 2px;
+            box-shadow:
+                5px 5px 10px #c9ced4,
+                -5px -5px 10px #ffffff;
+            transition: all 0.2s ease-in-out;
+        }
+        audio:hover {
+            box-shadow:
+                7px 7px 14px #c9ced4,
+                -7px -7px 14px #ffffff;
+        }
+
+        .ad-unit-container-middle-320x50 { /* Below Audio */
+            margin-top: 25px;
+            margin-bottom: 20px;
+            width: 320px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+        }
+
+        /* NEW Ad Unit (320x50) - Below WhatsApp Button Styling */
+        .ad-unit-container-below-whatsapp-320x50 {
+            margin-top: 25px; /* Space above this ad unit */
+            margin-bottom: 20px; /* Space below this ad unit */
+            width: 320px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+        }
+
+        .ad-unit-container-bottom-300x250 { /* Existing ad unit, now below the new 320x50 ad */
+            margin-top: 20px; /* Adjusted slightly if needed, or keep as 25px */
+            margin-bottom: 20px;
+            width: 300px;
+            height: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #f0f2f5;
+            box-shadow: inset 2px 2px 5px #c9ced4,
+                        inset -2px -2px 5px #ffffff;
+            border: 1px solid #d1d1d1;
+            box-sizing: border-box;
+        }
+
+        #shareButton {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            margin: 20px auto 0 auto; /* Margin for share button itself */
+        }
+
+        #shareButton svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            margin-right: 10px;
+        }
+
+        #shareButton:hover {
+            background-color: #1DA851;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        #shareButton:active {
+             background-color: #128C7E;
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+             transform: translateY(1px);
+        }
+
+        #sharedByNameMessage {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            color: #333;
+            font-size: 0.95rem;
+            text-align: center;
+            border-radius: 4px;
+            line-height: 1.5;
+        }
+        #sharedByNameMessage:empty {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>Bismillah Rahman Rahim</h2>
+
+        <div id="sharedByNameMessage"></div>
+
+        <div class="image-container">
+            <img id="duaImage" class="dua-image" src="https://raw.githubusercontent.com/AftabAlamSaha/Allah-Hu-Akbar/main/Picsart_25-05-23_06-47-25-796.png" alt="Custom Image from GitHub">
+            <a id="downloadImageBtn" href="#" download="image.png" aria-label="Download Image">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+                </svg>
+            </a>
+        </div>
+
+        <audio id="duaAudio" controls autoplay loop>
+             <source src="https://raw.githubusercontent.com/AftabAlamSaha/Allah-Hu-Akbar/main/instagram_1747964346601(44.1K)(2).mp3" type="audio/mpeg">
+             Your browser does not support the audio element.
+        </audio>
+
+        <!-- Ad Unit (320x50) - Below Audio, Above Name Input -->
+        <div class="ad-unit-container-middle-320x50">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '84b1b66a437f9f4735a25c6f144cb8cd',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/84b1b66a437f9f4735a25c6f144cb8cd/invoke.js"></script>
+        </div>
+        <!-- End Ad Unit -->
+
+
+        <label for="userName">Janab Yahan per Apna Naam likhiye</label>
+        <input type="text" id="userName" placeholder="Apka Naam">
+
+        <button id="shareButton" aria-label="WhatsApp Par Share Karein">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M19.238 4.762c-2.296-2.297-5.496-3.558-8.846-3.558C5.282 1.204 1.204 5.282 1.204 10.392c0 1.75.46 3.492 1.382 5.028L1.204 22.796l7.624-1.382c1.458.774 3.11 1.19 4.778 1.19h.002c5.11 0 9.188-4.078 9.188-9.188 0-3.35-.768-6.55-3.558-8.844zM10.392 20.03c-1.46 0-2.912-.384-4.204-1.144L3.98 19.95l1.16-2.308c-.84-1.342-1.294-2.866-1.294-4.258 0-4.122 3.344-7.464 7.466-7.464 2.012 0 3.906.784 5.328 2.206 1.422 1.422 2.206 3.316 2.206 5.328-.002 4.12-3.346 7.464-7.468 7.464zm4.83-5.894c-.264-.132-1.56-.77-1.802-.858-.242-.09-.42-.132-.594.132-.174.264-.682.858-.834 1.032-.156.174-.312.198-.578.066-.264-.132-1.116-.408-2.124-1.31-.786-.696-1.32-1.56-1.476-1.824-.156-.264-.018-.402.114-.534.12-.12.264-.312.396-.468.132-.156.174-.264.264-.444.09-.174.048-.312-.018-.444-.06-.132-.594-1.428-.81-1.956-.21-.51-.426-.44-.594-.446-.156-.006-.336-.006-.516-.006-.18 0-.468.066-.708.33-.24.264-.924.9-.924 2.196s.948 2.55 1.08 2.724c.132.174 1.854 2.832 4.494 3.972.63.276 1.128.444 1.524.564.588.18 1.116.156 1.536.096.468-.066 1.56-.636 1.776-1.248.216-.612.216-1.14.156-1.248-.06-.114-.234-.174-.5-.306z"></path>
+            </svg>
+            <span>WhatsApp Par Share Karein</span>
+        </button>
+
+        <!-- NEW Ad Unit (320x50) - Placed BELOW the WhatsApp Button -->
+        <div class="ad-unit-container-below-whatsapp-320x50">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '84b1b66a437f9f4735a25c6f144cb8cd', /* Your provided ad key */
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/84b1b66a437f9f4735a25c6f144cb8cd/invoke.js"></script>
+        </div>
+        <!-- End NEW Ad Unit -->
+
+        <!-- Existing Ad Unit (300x250) - Also Below WhatsApp Button (now further down) -->
+        <div class="ad-unit-container-bottom-300x250">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'b50da3d1cbcfba556b1d702325a537dc',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/b50da3d1cbcfba556b1d702325a537dc/invoke.js"></script>
+        </div>
+        <!-- End Ad Unit -->
+
+    </div>
+
+    <script>
+        // JavaScript remains the same
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const sharedByName = getQueryParam('sharedBy');
+            const sharedByNameMessageDiv = document.getElementById('sharedByNameMessage');
+
+            if (sharedByName && sharedByNameMessageDiv) {
+                const decodedName = decodeURIComponent(sharedByName);
+                sharedByNameMessageDiv.innerHTML = '';
+                const nameElement = document.createElement('strong');
+                nameElement.textContent = decodedName;
+                sharedByNameMessageDiv.appendChild(nameElement);
+                sharedByNameMessageDiv.append(" ne yeh message bheja hai.");
+                sharedByNameMessageDiv.appendChild(document.createElement('br'));
+                sharedByNameMessageDiv.append("Jisne aapke paas yeh message bheja hai, unke liye bhi dua karein.");
+            }
+
+            const imageElement = document.getElementById('duaImage');
+            const downloadBtn = document.getElementById('downloadImageBtn');
+
+            if (imageElement && downloadBtn) {
+                downloadBtn.href = imageElement.src;
+                let filename = imageElement.src.substring(imageElement.src.lastIndexOf('/') + 1);
+                filename = filename.split('?')[0];
+                downloadBtn.setAttribute('download', filename || 'downloaded_image.png');
+            }
+
+            const audioElement = document.getElementById('duaAudio');
+            const audioSourceElement = audioElement.querySelector('source');
+
+            if (audioElement && audioSourceElement) {
+                  audioElement.play().catch(error => {
+                      console.warn("Audio autoplay was prevented by the browser. This is a common browser restriction.", error);
+                  });
+            }
+        });
+
+        document.getElementById('shareButton').addEventListener('click', function() {
+            const userNameInput = document.getElementById('userName');
+            const name = userNameInput.value.trim();
+            const pageBaseURL = window.location.origin + window.location.pathname;
+            let linkToShare = pageBaseURL;
+
+            if (name) {
+                linkToShare += `?sharedBy=${encodeURIComponent(name)}`;
+            }
+
+            let message = `Assalamualaikum!`;
+            if (name) {
+                message += `\n\n${name} aapke saath yeh message share kar rahe hain:`;
+            }
+            message += `\n\nJazakAllah Khair!`;
+            message += `\n\nIs link par dekhein:\n${linkToShare}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+
+</body>
+</html>
