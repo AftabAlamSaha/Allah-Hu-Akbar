@@ -1,449 +1,352 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title remains the same -->
-    <title>Narendra Damodardas Modi - Bhartiya Janata Party - हार्दिक शुभकामनाएँ</title>
-
-    <!-- Google Font for stylish text (Playfair Display) -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-
-    <!-- CSS Styles (Single file - within <style> tag) -->
+    <title>Allah Ka hamd</title>
     <style>
-        /* Animated Colorful Background Layer with Indian Flag Colors */
-        .animated-background {
-            position: fixed; /* Fix it to the viewport */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Send it behind the content */
-            pointer-events: none; /* Allow clicks to pass through to content */
-
-            /* Indian Flag Color Gradient - Only Saffron, White, Green */
-            background: linear-gradient(
-                45deg, /* Angle of gradient */
-                #FF9933 0%,    /* Saffron start */
-                #FF9933 33%,   /* Saffron end */
-                #FFFFFF 33%,   /* White start */
-                #FFFFFF 66%,   /* White end */
-                #138808 66%,   /* Green start */
-                #138808 100%   /* Green end */
-            );
-            background-size: 400% 400%; /* Make the gradient much larger than the viewport */
-
-            /* Animation for Background Position - Remains the same */
-            animation: gradientAnimation 15s ease infinite; /* Animate position continuously */
-
-            /* Apply Blur Filter - Remains the same */
-            filter: blur(20px);
-            -webkit-filter: blur(20px); /* For Safari */
-        }
-
-        /* Animation Keyframes for the Gradient Background - Remains the same */
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            25% { background-position: 100% 0%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-
-        /* Styles for Body and Content (on top of the background) */
         body {
-            font-family: 'Arial', sans-serif; /* Default font for body */
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
             margin: 0;
-            padding: 20px; /* Add padding to the body for overall spacing */
-            color: #333; /* Default text color (dark) for better contrast on potential lighter areas */
-            text-align: center;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scroll during slide animation */
-            min-height: 100vh; /* Ensure body takes at least full viewport height */
-            box-sizing: border-box; /* Include padding in height */
-            position: relative; /* Needed for stacking context */
-            z-index: 0; /* Ensure body content is above the background overlay */
-            perspective: 1000px; /* Needed for 3D transforms on elements */
-        }
-
-        /* Animation Keyframes for H1 Text (Wobble 3D) - Remains the same */
-        @keyframes wobble3D {
-            0%, 100% { transform: translate3d(0, 0, 0) rotateY(0); }
-            25%    { transform: translate3d(-5px, 0, 15px) rotateY(10deg); }
-            50%    { transform: translate3d(0, 0, 0) rotateY(-10deg); }
-            75%    { transform: translate3d(5px, 0, 15px) rotateY(10deg); }
-        }
-        /* Animation Keyframes for BJP Samarthak Text (Color Pulse) - Remains the same */
-        /* NOTE: This animation uses many colors for the text glow effect, as requested previously. */
-        @keyframes colorPulse {
-            0%, 100% { color: #ff9933; text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
-            16%    { color: #eee; text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
-            33%    { color: #4dc247; text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
-            50%    { color: #00bfff; text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
-            66%    { color: #ff1493; text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
-            83%    { color: #ffff00; text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
-        }
-
-        h1 {
-            color: #ff9933; /* भगवा जैसा रंग */
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-             /* Adjusted shadow for visibility on blurred colorful background */
-            text-shadow:
-                 -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000,
-                 -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
-                 0 0 10px rgba(255,255,255,0.5); /* White Glow */
-            animation: wobble3D 3s infinite ease-in-out; /* Apply the 3D Wobble Animation */
-        }
-
-        /* Animation Keyframes (remain the same as Message uses scaleFadeIn) */
-        @keyframes scaleFadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to   { opacity: 1; transform: scale(1); }
-        }
-
-
-        .message {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #eee; /* Light text color on Saffron background */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Dark shadow for readability on color */
-            background-color: #FF9933; /* Forced Saffron background */
-            padding: 15px;
-            border-radius: 8px;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 600px;
-             box-shadow: 0 3px 6px rgba(0,0,0,0.4); /* Increased shadow */
-        }
-
-        /* Styling and Animation for Message Paragraphs - Remains the same */
-        .message p {
-             margin-bottom: 0;
-             opacity: 0;
-             animation: scaleFadeIn 0.6s ease-out forwards;
-             color: inherit;
-             text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-        }
-
-
-        .shayari {
-            font-family: 'Playfair Display', serif; /* Changed Font to Playfair Display */
-            font-style: italic;
-            font-size: 1.2em;
-            margin: 25px auto;
-            line-height: 1.6;
-            background-color: #138808; /* Forced GREEN background */
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 600px;
-             box-shadow: 0 3px 6px rgba(0,0,0,0.4); /* Increased shadow */
-        }
-
-        /* Animation Keyframes (remain the same as Message uses scaleFadeIn) */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Styling and Animation for Shayari lines */
-        .shayari p {
-            opacity: 1; /* Keep visible as animation is infinite now */
-            animation: shayari3DAnimate 5s infinite ease-in-out; /* Apply the new 3D Animation with delays */
-            margin-bottom: 0.5em;
-
-            /* Black Border Effect + Combined with Large White Glowing Shadow */
-             text-shadow:
-                 -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, /* Black Border */
-                 0 0 160px rgba(255, 255, 255, 0.8), /* Large White Glow Blur */
-                 0 0 200px rgba(255, 255, 255, 0.6), /* Larger White Glow Spread */
-                 0 0 240px rgba(255, 255, 255, 0.4); /* Even Larger White Glow Spread */
-        }
-
-        /* New Animation Keyframes for Shayari Text (Subtle 3D Rotate/Move) - Remains the same */
-        @keyframes shayari3DAnimate {
-             0%, 100% { transform: translateZ(0) rotateX(0) rotateY(0); }
-             25%    { transform: translateZ(5px) rotateX(5deg) rotateY(3deg); }
-             50%    { transform: translateZ(0) rotateX(0) rotateY(-3deg); }
-             75%    { transform: translateZ(5px) rotateX(-5deg) rotateY(3deg); }
-        }
-
-        /* Apply Flag Colors and Delays for Sequential Animation (Text Shadow is applied to .shayari p) - Remains the same */
-        .shayari p:nth-of-type(1) { color: #FF9933; animation-delay: 0s; } /* Saffron */
-        .shayari p:nth-of-type(2) { color: #FF9933; animation-delay: 0.5s; } /* Saffron */
-        .shayari p:nth-of-type(3) { color: #FFFFFF; animation-delay: 1s; } /* White */
-        .shayari p:nth-of-type(4) { color: #138808; animation-delay: 1.5s; } /* Green */
-         .shayari p:last-child { margin-bottom: 0; }
-
-
-        .gif-container {
-            text-align: center;
-            margin: 20px auto;
             padding: 20px;
-            background-color: #FFFFFF; /* White background for the container box */
-            border-radius: 8px;
-            box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.8); /* Increased White shadow glow effect */
-            display: block;
-            width: fit-content;
-            max-width: calc(100% - 40px);
-        }
-
-        .gif-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: none;
-        }
-
-        /* Styles for the Signature, Name Input area, Button, and Ads */
-        .signature-share-section {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        /* Removed .signature style */
-
-        .bjp-samarthak-text {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            animation: colorPulse 4s infinite ease-in-out; /* Apply the animated glow */
-        }
-
-
-        .name-input-area {
-            margin-bottom: 15px;
-            display: inline-block;
-            background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
-            padding: 10px 15px;
-            border-radius: 8px;
-             box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Increased shadow */
-        }
-
-        .name-input-area label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #eee; /* Light text for label */
-            text-shadow: none;
-            text-align: left;
-        }
-
-        .name-input-area input[type="text"] {
-            background-color: #333; /* Darker input field */
-            border: 1px solid #555;
-            border-radius: 4px;
-            padding: 8px;
-            font-size: 1em;
-            width: 200px;
-            max-width: 100%;
-            box-sizing: border-box;
-            color: #eee; /* Light text color for input */
-            text-shadow: none;
-        }
-
-
-        .whatsapp-share {
-            display: inline-block;
-            margin-top: 0;
-            margin-bottom: 20px;
-            padding: 12px 25px;
-            background: linear-gradient(to bottom, #25D366, #1DA851); /* Gradient */
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            font-weight: bold;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.8), 0 0 24px rgba(0, 0, 0, 0.6), 0 0 36px rgba(0, 128, 0, 0.5); /* Increased Box Shadow */
-            transition: all 0.2s ease;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            border: none;
-        }
-
-        .whatsapp-share:hover {
-             background: linear-gradient(to bottom, #1DA851, #25D366);
-             box-shadow: 0 0 18px rgba(0, 0, 0, 0.9), 0 0 36px rgba(0, 0, 0, 0.7), 0 0 48px rgba(0, 128, 0, 0.7); /* Increased hover shadow */
-             transform: translateY(-3px);
-        }
-         .whatsapp-share:active {
-             background: linear-gradient(to bottom, #1DA851, #1DA851);
-             box-shadow: 0 1px 4px rgba(0, 0, 0, 1.0); /* Increased active shadow */
-             transform: translateY(0);
-         }
-
-
-        /* Removed .signature style */
-
-        /* Ad Units Container (for 160x600 ads below WhatsApp) - Remains the same */
-        .ads-container {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            gap: 20px;
-            margin: 20px auto;
-            flex-wrap: wrap;
-            max-width: 360px;
-             box-shadow: 0 3px 6px rgba(0,0,0,0.4); /* Increased shadow for the container */
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
         }
-        /* Ad item itself doesn't have shadow */
 
-        /* New Ad Unit Wrapper (for 320x50 ads above/below GIF) - Remains the same */
-        .banner-ad-unit {
-             margin: 20px auto;
-             width: 320px;
-             height: 50px;
-             background-color: rgba(255, 255, 255, 0.05);
+        .container {
+            background-color: #f0f2f5;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px #bec3c9,
+                        -10px -10px 20px #ffffff;
+            text-align: center;
+            max-width: 500px; /* Container max-width */
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dua-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #downloadImageBtn {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        #downloadImageBtn svg {
+            width: 1em;
+            height: 1em;
+            margin-right: 4px;
+            fill: currentColor;
+        }
+
+        #downloadImageBtn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        audio {
+            width: 100%;
+            margin: 25px auto;
+            display: block;
+            border-radius: 10px;
+            outline: none;
+            background: #f0f2f5;
+            padding: 2px;
+            box-shadow:
+                5px 5px 10px #c9ced4,
+                -5px -5px 10px #ffffff;
+            transition: all 0.2s ease-in-out;
+        }
+        audio:hover {
+            box-shadow:
+                7px 7px 14px #c9ced4,
+                -7px -7px 14px #ffffff;
+        }
+
+        .ad-unit-container-middle-320x50 { /* Below Audio */
+            margin-top: 25px;
+            margin-bottom: 20px;
+            width: 320px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+        }
+
+        /* NEW Ad Unit (320x50) - Below WhatsApp Button Styling */
+        .ad-unit-container-below-whatsapp-320x50 {
+            margin-top: 25px; /* Space above this ad unit */
+            margin-bottom: 20px; /* Space below this ad unit */
+            width: 320px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+        }
+
+        .ad-unit-container-bottom-300x250 { /* Existing ad unit, now below the new 320x50 ad */
+            margin-top: 20px; /* Adjusted slightly if needed, or keep as 25px */
+            margin-bottom: 20px;
+            width: 300px;
+            height: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #f0f2f5;
+            box-shadow: inset 2px 2px 5px #c9ced4,
+                        inset -2px -2px 5px #ffffff;
+            border: 1px solid #d1d1d1;
+            box-sizing: border-box;
+        }
+
+        #shareButton {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            margin: 20px auto 0 auto; /* Margin for share button itself */
+        }
+
+        #shareButton svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            margin-right: 10px;
+        }
+
+        #shareButton:hover {
+            background-color: #1DA851;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        #shareButton:active {
+             background-color: #128C7E;
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+             transform: translateY(1px);
+        }
+
+        #sharedByNameMessage {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            color: #333;
+            font-size: 0.95rem;
+            text-align: center;
+            border-radius: 4px;
+            line-height: 1.5;
+        }
+        #sharedByNameMessage:empty {
+            display: none;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Animated Colorful Background Layer -->
-    <div class="animated-background"></div>
+    <div class="container">
 
-    <h1>हार्दिक शुभकामनाएँ</h1>
+        <h2>Bismillah Rahman Rahim</h2>
 
-    <!-- Message Box with Saffron Background -->
-    <div class="message">
-        <p>यह शुभकामना देश के प्रति समर्पित सभी कार्यकर्ताओं और समर्थकों के लिए है।</p>
-        <!-- Removed the second paragraph -->
-    </div>
+        <div id="sharedByNameMessage"></div>
 
-    <!-- Top Banner Ad Unit -->
-  <div class="banner-ad-unit">
-      <script type="text/javascript">
-	atOptions = {
-		'key' : '84b1b66a437f9f4735a25c6f144cb8cd',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/84b1b66a437f9f4735a25c6f144cb8cd/invoke.js"></script>
-    </div>
-
-
-    <!-- GIF Image Section with White Background & Glow -->
-    <div class="gif-container">
-        <!-- यहां अपनी GIF इमेज का URL डालें -->
-        <!-- कृपया नीचे दिए गए src="YOUR_GIF_URL_HERE" को अपनी GIF URL से बदलें -->
-        <img id="mainGif" src="https://raw.githubusercontent.com/AftabAlamSaha/BJP/main/modi-bjp.gif" alt="शुभकामना GIF">
-        <!-- एक उदाहरण GIF URL दिया गया है, इसे अपनी पसंद के GIF से बदलें -->
-    </div>
-
-    <!-- Bottom Banner Ad Unit -->
-    <div class="banner-ad-unit">
-      <script type="text/javascript">
-	atOptions = {
-		'key' : '84b1b66a437f9f4735a25c6f144cb8cd',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/84b1b66a437f9f4735a25c6f144cb8cd/invoke.js"></script>
-     </div>
-
-
-     <!-- Combined Shayari with Animation and Green Background -->
-    <div class="shayari">
-        <p>नमन इस माटी को जिसने हमें पाला है,</p>
-        <p>देश की सेवा ही हमारा धर्म निराला है।</p>
-        <p>खेतों में मेहनत करे किसान, सीमा पर डटा रहे जवान,</p>
-        <p>इन्हीं से रोशन है अपना हिन्दुस्तान।</p>
-    </div>
-
-
-    <div class="signature-share-section">
-        <!-- Removed the signature paragraph -->
-
-        <!-- Text above name input area with animated glow -->
-        <p class="bjp-samarthak-text">भारतीय जनता पार्टी समर्थक हो तो अपना नाम लिखकर आगे भेजो</p> <!-- Updated text -->
-
-        <div class="name-input-area">
-            <label for="userNameInput">आपका शुभ नाम:</label> <!-- Updated label text -->
-            <input type="text" id="userNameInput" placeholder="यहां अपना नाम लिखें" aria-label="आपका शुभ नाम"> <!-- Aria-label updated -->
+        <div class="image-container">
+            <img id="duaImage" class="dua-image" src="https://raw.githubusercontent.com/AftabAlamSaha/Allah-Hu-Akbar/main/Picsart_25-05-23_06-47-25-796.png" alt="Custom Image from GitHub">
+            <a id="downloadImageBtn" href="#" download="image.png" aria-label="Download Image">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+                </svg>
+            </a>
         </div>
 
-        <!-- WhatsApp Share Button - Styled for 3D effect -->
-        <a href="#" id="whatsappShareBtn" class="whatsapp-share">
-            WhatsApp पर शेयर करें
-        </a>
+        <audio id="duaAudio" controls autoplay loop>
+             <source src="https://raw.githubusercontent.com/AftabAlamSaha/Allah-Hu-Akbar/main/instagram_1747964346601(44.1K)(2).mp3" type="audio/mpeg">
+             Your browser does not support the audio element.
+        </audio>
 
-        <!-- Ad Units Container (160x600 ads) - Remains the same -->
-        <div class="ads-container">
-             <div class="ad-item">
-                 <script type="text/javascript">
-	atOptions = {
-		'key' : '164441d67d6cd8dc54ee06d89f2e34fe',
-		'format' : 'iframe',
-		'height' : 600,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/164441d67d6cd8dc54ee06d89f2e34fe/invoke.js"></script>
-             </div>
-             <div class="ad-item">
-                 <script type="text/javascript">
-	atOptions = {
-		'key' : '164441d67d6cd8dc54ee06d89f2e34fe',
-		'format' : 'iframe',
-		'height' : 600,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/164441d67d6cd8dc54ee06d89f2e34fe/invoke.js"></script>
-             </div>
+        <!-- Ad Unit (320x50) - Below Audio, Above Name Input -->
+        <div class="ad-unit-container-middle-320x50">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '84b1b66a437f9f4735a25c6f144cb8cd',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/84b1b66a437f9f4735a25c6f144cb8cd/invoke.js"></script>
         </div>
+        <!-- End Ad Unit -->
+
+
+        <label for="userName">Janab Yahan per Apna Naam likhiye</label>
+        <input type="text" id="userName" placeholder="Apka Naam">
+
+        <button id="shareButton" aria-label="WhatsApp Par Share Karein">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M19.238 4.762c-2.296-2.297-5.496-3.558-8.846-3.558C5.282 1.204 1.204 5.282 1.204 10.392c0 1.75.46 3.492 1.382 5.028L1.204 22.796l7.624-1.382c1.458.774 3.11 1.19 4.778 1.19h.002c5.11 0 9.188-4.078 9.188-9.188 0-3.35-.768-6.55-3.558-8.844zM10.392 20.03c-1.46 0-2.912-.384-4.204-1.144L3.98 19.95l1.16-2.308c-.84-1.342-1.294-2.866-1.294-4.258 0-4.122 3.344-7.464 7.466-7.464 2.012 0 3.906.784 5.328 2.206 1.422 1.422 2.206 3.316 2.206 5.328-.002 4.12-3.346 7.464-7.468 7.464zm4.83-5.894c-.264-.132-1.56-.77-1.802-.858-.242-.09-.42-.132-.594.132-.174.264-.682.858-.834 1.032-.156.174-.312.198-.578.066-.264-.132-1.116-.408-2.124-1.31-.786-.696-1.32-1.56-1.476-1.824-.156-.264-.018-.402.114-.534.12-.12.264-.312.396-.468.132-.156.174-.264.264-.444.09-.174.048-.312-.018-.444-.06-.132-.594-1.428-.81-1.956-.21-.51-.426-.44-.594-.446-.156-.006-.336-.006-.516-.006-.18 0-.468.066-.708.33-.24.264-.924.9-.924 2.196s.948 2.55 1.08 2.724c.132.174 1.854 2.832 4.494 3.972.63.276 1.128.444 1.524.564.588.18 1.116.156 1.536.096.468-.066 1.56-.636 1.776-1.248.216-.612.216-1.14.156-1.248-.06-.114-.234-.174-.5-.306z"></path>
+            </svg>
+            <span>WhatsApp Par Share Karein</span>
+        </button>
+
+        <!-- NEW Ad Unit (320x50) - Placed BELOW the WhatsApp Button -->
+        <div class="ad-unit-container-below-whatsapp-320x50">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '84b1b66a437f9f4735a25c6f144cb8cd', /* Your provided ad key */
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/84b1b66a437f9f4735a25c6f144cb8cd/invoke.js"></script>
+        </div>
+        <!-- End NEW Ad Unit -->
+
+        <!-- Existing Ad Unit (300x250) - Also Below WhatsApp Button (now further down) -->
+        <div class="ad-unit-container-bottom-300x250">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'b50da3d1cbcfba556b1d702325a537dc',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/b50da3d1cbcfba556b1d702325a537dc/invoke.js"></script>
+        </div>
+        <!-- End Ad Unit -->
 
     </div>
 
-
-    <!-- JavaScript (Single file - within <script> tag) -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const shareBtn = document.getElementById('whatsappShareBtn');
-            const nameInput = document.getElementById('userNameInput'); // Get the input field
+        // JavaScript remains the same
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
-            // Base Share Text (reverted back)
-            const baseShareText = "राष्ट्र निर्माण का संकल्प! जवान और किसान को नमन। नरेंद्र मोदी - Bhartiya Janata Party समर्थकों के लिए विशेष संदेश: ";
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const sharedByName = getQueryParam('sharedBy');
+            const sharedByNameMessageDiv = document.getElementById('sharedByNameMessage');
 
-            shareBtn.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent the default link action initially
+            if (sharedByName && sharedByNameMessageDiv) {
+                const decodedName = decodeURIComponent(sharedByName);
+                sharedByNameMessageDiv.innerHTML = '';
+                const nameElement = document.createElement('strong');
+                nameElement.textContent = decodedName;
+                sharedByNameMessageDiv.appendChild(nameElement);
+                sharedByNameMessageDiv.append(" ne yeh message bheja hai.");
+                sharedByNameMessageDiv.appendChild(document.createElement('br'));
+                sharedByNameMessageDiv.append("Jisne aapke paas yeh message bheja hai, unke liye bhi dua karein.");
+            }
 
-                const userName = nameInput.value.trim(); // Get and trim the user's name
-                const pageUrl = window.location.href; // Get the current page URL
+            const imageElement = document.getElementById('duaImage');
+            const downloadBtn = document.getElementById('downloadImageBtn');
 
-                let fullShareText;
-                if (userName) {
-                    // If name is entered, format like "Name द्वारा: Message"
-                    fullShareText = `${userName} द्वारा: ${baseShareText}`;
-                } else {
-                    // If no name, just use the base message
-                    fullShareText = baseShareText;
-                }
+            if (imageElement && downloadBtn) {
+                downloadBtn.href = imageElement.src;
+                let filename = imageElement.src.substring(imageElement.src.lastIndexOf('/') + 1);
+                filename = filename.split('?')[0];
+                downloadBtn.setAttribute('download', filename || 'downloaded_image.png');
+            }
 
-                // Append the page URL to the text
-                fullShareText = fullShareText + " " + pageUrl; // Added a space before the URL
+            const audioElement = document.getElementById('duaAudio');
+            const audioSourceElement = audioElement.querySelector('source');
 
-                // Encode the text for the URL
-                const encodedText = encodeURIComponent(fullShareText);
+            if (audioElement && audioSourceElement) {
+                  audioElement.play().catch(error => {
+                      console.warn("Audio autoplay was prevented by the browser. This is a common browser restriction.", error);
+                  });
+            }
+        });
 
-                // Construct the WhatsApp share link
-                const whatsappLink = `https://api.whatsapp.com/send?text=${encodedText}`;
+        document.getElementById('shareButton').addEventListener('click', function() {
+            const userNameInput = document.getElementById('userName');
+            const name = userNameInput.value.trim();
+            const pageBaseURL = window.location.origin + window.location.pathname;
+            let linkToShare = pageBaseURL;
 
-                // Redirect to the WhatsApp share link
-                 window.location.href = whatsappLink;
+            if (name) {
+                linkToShare += `?sharedBy=${encodeURIComponent(name)}`;
+            }
 
-            });
+            let message = `Assalamualaikum!`;
+            if (name) {
+                message += `\n\n${name} aapke saath yeh message share kar rahe hain:`;
+            }
+            message += `\n\nJazakAllah Khair!`;
+            message += `\n\nIs link par dekhein:\n${linkToShare}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
         });
     </script>
 
